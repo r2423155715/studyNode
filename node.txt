@@ -1,0 +1,33 @@
+C:\Users\Administrator\AppData\Roaming\nvm  nvm地址
+C:\Users\Administrator\AppData\Roaming\nvm\v12.18.2  node地址
+nvm命令
+nvm off                     //禁用node.js版本管理(不卸载任何东西)
+nvm on                      //启用node.js版本管理
+nvm install <version>       //安装node.js的命名 version是版本号 例如：nvm install 8.12.0
+nvm uninstall <version>     //卸载node.js是的命令，卸载指定版本的nodejs，当安装失败时卸载使用
+nvm list                    //显示所有安装的node.js版本
+nvm list available          //显示可以安装的所有node.js的版本
+nvm use <version>           //切换到使用指定的nodejs版本
+
+
+内置模块
+fs  :文件操作
+http :网络操作
+path :路径操作
+querystring :查询参数解析
+url  :url解析
+
+DNS:帮助我们将域名解析成IP地址
+
+解决请求缓存的问题
+1.请求后面拼接随机数 接收地方用startWith判断
+2.ajax设置请求头 ajax.setRequestHeader('Cache=Control','no-cache')
+
+app.get直接取requset.query
+app.post 需要执行下面两句 才能取request.body 否则undefined
+    app.use(express.urlencoded({ extended: true }));
+    app.use(express.json())
+声明静态文件
+app.use(express.static(path.join(__dirname,'public')));//设置再public下查找资源
+
+模板页面
